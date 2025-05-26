@@ -1,0 +1,76 @@
+
+<html>
+<head>
+
+  <title>Alvin's Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(to right, #f5f7fa, #c3cfe2); color: #2c3e50; }
+    nav { background-color: #34495e; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    nav h1 { color: #ecf0f1; font-size: 1.5rem; }
+    nav ul { display: flex; list-style: none; gap: 1.5rem; }
+    nav ul li a { color: #ecf0f1; text-decoration: none; font-weight: bold; }
+    nav ul li a:hover { color: #1abc9c; }
+    .container { max-width: 1000px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); text-align: center; }
+    img.profile { width: 180px; border-radius: 50%; box-shadow: 0 0 12px rgba(0,0,0,0.2); margin-top: 1rem; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .details { text-align: left; margin-top: 2rem; }
+    .details h3 { margin-bottom: 0.5rem; color: #2980b9; }
+    .details ul { list-style-type: square; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .about-me { margin-top: 2rem; text-align: left; }
+    .about-me h3 { color: #2980b9; margin-bottom: 0.5rem; }
+    .about-me p { line-height: 1.6; margin-bottom: 1rem; }
+    .contact-info p { margin: 0.3rem 0; }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
+  </script>
+</head>
+<body>
+  <nav>
+    <h1>Alvin Sony</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+  </nav>
+  <div class="container fade-in">
+    <h2>Welcome to My Portfolio</h2>
+    <p>I am an MCA student passionate about full-stack web development, cloud computing, and AI.</p>
+    <img src="./Camera Roll/linkedin dp.jpg" alt="Alvin Sony" class="profile">
+
+    <div class="about-me">
+      <h3>About Me</h3>
+      <p>
+        My name is Alvin Sony, and I'm currently pursuing a Master of Computer Applications (MCA) at Saintgits College of Engineering.
+        I have a deep interest in modern web technologies, cloud platforms, and artificial intelligence.  I'm also actively involved in communities like GTech MuLearn, Inovus Lab,
+        and Research Hub to stay connected with the latest trends and innovations.
+      </p>
+      <div class="contact-info">
+        <p><strong>Name:</strong> Alvin Sony</p>
+        <p><strong>Email:</strong> alvinsony07@gmail.com</p>
+        <p><strong>Phone:</strong> +91-9746230350</p>
+        <p><strong>Location:</strong> Changanacherry, Kottayam, Kerala</p>
+        <p><strong>Career Goal:</strong> To become a proficient full-stack developer and contribute to impactful software solutions</p>
+      </div>
+    </div>
+
+    <div class="details">
+      <h3> Education</h3>
+      <ul>
+        <li><strong>MCA:</strong> Saintgits College of Engineering (Autonomous), Pathamuttom, Kottayam</li>
+        <li><strong>BCA:</strong> Kristu Jyoti College of Management and Technology, Changanasserry</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
